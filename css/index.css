@@ -1,0 +1,211 @@
+:root {
+    --bg-dark: #02040e; 
+    --accent-purple: #9911ff; 
+    --text-white: #ffffff;
+    --text-gray: #b3b3b3;
+    --gradient-hbo: linear-gradient(45deg, #9911ff, #2b59ff);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4%;
+    background: rgba(2, 4, 14, 0.9);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(10px); /* Efecto cristalizado */
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    background: var(--gradient-hbo);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-white);
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--accent-purple);
+}
+
+/* HERO SECTION */
+.hero {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: 0 6%;
+    background: linear-gradient(to right, #02040e 20%, transparent 80%), 
+                url('/img/interestelar.jpg') no-repeat center center;
+    background-size: cover;
+    background-position: top;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.badge {
+    background: var(--gradient-hbo);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin: 15px 0;
+}
+
+.hero-content p {
+    color: var(--text-gray);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.btn-play {
+    padding: 12px 30px;
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.btn-play:hover {
+    background: #e6e6e6;
+}
+
+.btn-info {
+    padding: 12px 30px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 10px;
+    transition: 0.3s;
+}
+
+.btn-info:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* MOVIE GRID (Películas) */
+.main-container {
+    padding: 40px 6%;
+}
+
+.movie-section h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.movie-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    aspect-ratio: 2/3; 
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+.movie-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 10%, transparent 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 15px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.movie-card:hover .card-overlay {
+    opacity: 1;
+}
+
+/* FOOTER */
+.footer {
+    padding: 50px 6%;
+    background-color: #010208;
+    text-align: center;
+}
+
+.footer-links {
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: var(--text-gray);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 0.9rem;
+}
+
+.footer p {
+    color: #444;
+    font-size: 0.8rem;
+}
