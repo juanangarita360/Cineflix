@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/peliculas.css"> <link rel="stylesheet" href="/css/movies.css"> <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Catálogo - CineFlix</title>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">CINE<span>FLIX</span></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="movies.html" class="active">Películas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-container" style="margin-top: 100px;">
+        
+        <section class="filters-container">
+            <h1>Explorar Películas</h1>
+            
+            <div class="filter-bar">
+                <div class="search-box">
+                    <input type="text" placeholder="Buscar por nombre...">
+                </div>
+
+                <div class="select-group">
+                    <select class="custom-select">
+                        <option value="">Género</option>
+                        <option value="accion">Acción</option>
+                        <option value="scifi">Ciencia Ficción</option>
+                        <option value="drama">Drama</option>
+                    </select>
+
+                    <select class="custom-select">
+                        <option value="">Año</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="antiguas">Clásicas</option>
+                    </select>
+
+                    <select class="custom-select">
+                        <option value="">Calificación</option>
+                        <option value="5">⭐⭐⭐⭐⭐</option>
+                        <option value="4">⭐⭐⭐⭐</option>
+                        <option value="3">⭐⭐⭐</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <section class="movie-section">
+            <div class="movie-grid">
+                <div class="movie-card">
+                    <img src="/img/inception.jpg" alt="Inception">
+                    <div class="card-overlay"><p>Inception</p></div>
+                </div>
+                <div class="movie-card">
+                    <img src="/img/El_caballero_oscuro.jpg" alt="The Dark Knight">
+                    <div class="card-overlay"><p>The Dark Knight</p></div>
+                </div>
+                <div class="movie-card">
+                    <img src="/img/the_matrix-.jpg" alt="The Matrix">
+                    <div class="card-overlay"><p>The Matrix</p></div>
+                </div>
+                <div class="movie-card">
+                    <img src="/img/Avatar.webp" alt="Avatar">
+                    <div class="card-overlay"><p>Avatar</p></div>
+                </div>
+                <div class="movie-card">
+                    <img src="/img/interestelar.jpg" alt="Interstellar">
+                    <div class="card-overlay"><p>Interstellar</p></div>
+                </div>
+                <div class="movie-card">
+                    <img src="" alt="Peli 6">
+                    <div class="card-overlay"><p>Cargando...</p></div>
+                </div>
+                </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#">Preguntas frecuentes</a>
+            <a href="#">Términos de uso</a>
+            <a href="#">Privacidad</a>
+        </div>
+        <p>© 2024 CineFlix</p>
+    </footer>
+</body>
+</html>

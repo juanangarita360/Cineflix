@@ -33,6 +33,14 @@ body {
     backdrop-filter: blur(10px); /* Efecto cristalizado */
 }
 
+
+.btn-info {
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+
 .logo {
     font-size: 1.8rem;
     font-weight: 700;
@@ -41,7 +49,7 @@ body {
 
 .logo span {
     background: var(--gradient-hbo);
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 

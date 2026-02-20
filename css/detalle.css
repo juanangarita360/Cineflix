@@ -1,92 +1,174 @@
-body{
+/* VARIABLES GLOBALES */
+:root {
+    --bg-dark: #02040e; 
+    --accent-purple: #9911ff; 
+    --text-white: #ffffff;
+    --text-gray: #b3b3b3;
+    --gradient-hbo: linear-gradient(45deg, #9911ff, #2b59ff);
+}
+
+* {
     margin: 0;
-    font-family: 'Courier New', Courier, monospace;
-    background-color: #141414;
-    color:white;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
-.overlay{
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    line-height: 1.6;
+}
+
+/* HERO SECTION - El impacto visual */
+.hero {
+    position: relative;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 0 6%;
+    /* Cambia esta URL por la imagen de Interestelar */
+    background: url('/img/interestelar.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+/* El degradado oscuro para que el texto resalte sobre la imagen */
+.overlay {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.2));
-}.hero-content{
+    inset: 0;
+    background: linear-gradient(to right, var(--bg-dark) 15%, transparent 70%),
+                linear-gradient(to top, var(--bg-dark), transparent 40%);
+}
+
+.hero-content {
     position: relative;
-    max-width: 600px;
     z-index: 2;
+    max-width: 650px;
 }
-.hero{
-    position: relative;
-    height: 80vh;
-   display: flex;
-   align-items: center;
-   padding: 60px;
-   background: url('/img/interestelar.jpg') no-repeat center center;
+
+.hero-content h1 {
+    font-size: 4.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
 }
-.hero h1{
-    font-size:70 px;
+
+/* META DATA (Año, Estrellas, Tiempo) */
+.movie-meta {
+    display: flex;
+    gap: 15px;
+    align-items: center;
     margin-bottom: 20px;
+    color: var(--text-gray);
+    font-weight: 700;
 }
-.movie-meta span{
-    margin-right: 15px;
-    color: #ccc;
+
+.reseña { color: #f1c40f; } /* Color dorado para estrellas */
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--text-gray);
+    margin-bottom: 30px;
 }
-.description{
-    margin: 20px 0;
-    font-size: 18px;
-    line-height: 1.5;
-}
+
+/* BOTONES */
 .buttons {
-    margin-top: 20px;
+    display: flex;
+    gap: 15px;
 }
-.buttons button {
-    padding: 12px 25px;
-    background: white;
-    color: black;
-    border: none;
+
+.btn-play, .btn-info {
+    padding: 12px 35px;
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
-    font-size: 16px;
-    margin-right: 15px;
+    font-size: 1rem;
+    border: none;
     transition: 0.3s;
 }
-.btn-play{
+
+.btn-play {
+    background: var(--text-white);
+    color: black;
+}
+
+.btn-play:hover { background: #e6e6e6; transform: scale(1.05); }
+
+.btn-info {
+    background: rgba(255, 255, 255, 0.15);
     color: white;
-    background-color: #651d81;
+    backdrop-filter: blur(5px);
 }
-.btn-play:hover {
-    background-color: #4d105f;
+
+.btn-info:hover { background: rgba(255, 255, 255, 0.25); }
+
+
+.section {
+    padding: 40px 6%;
 }
-.btn-info:hover {
-    background: rgba(255, 255, 255, 0.3);
-}
-.btn-info{
-    color: white;
-    background-color: rgba(109,109, 110,0.7);
-}
-.section{
-    padding: 50px 60px;
-}
-.section h2{
+
+.section h2 {
+    font-size: 1.8rem;
     margin-bottom: 20px;
+    color: var(--text-white);
 }
-.cards{
-    display: flex;
+
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     gap: 20px;
 }
-.card{
-    width: 200px;
-    height: 280px;
-    background-color: #333;
+
+.card {
     border-radius: 8px;
-    transition: transform 0.3s ease;
+    overflow: hidden;
+    transition: transform 0.3s;
+    cursor: pointer;
+    aspect-ratio: 2/3;
+    background: #111;
 }
-.card:hover {
-    transform: scale(1.05);
-}
-.cards .card img{
+
+.card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 8px;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    border: 2px solid var(--accent-purple);
+}
+
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: none; /* Se oculta por defecto */
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+
+.modal:target {
+    display: flex;
+}
+
+.modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    aspect-ratio: 16/9;
+    background: #000;
+}
+
+.close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: white;
+    font-size: 2rem;
+    text-decoration: none;
 }
